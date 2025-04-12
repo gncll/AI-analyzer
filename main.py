@@ -10,7 +10,7 @@ from langchain_openai import ChatOpenAI
 from langchain.agents.agent_types import AgentType
 import openai
 
-openai.api_key = st.secrets["openai"]["api_key"]
+api_key = st.secrets["openai"]["api_key"]
 
 # Page config
 st.set_page_config(page_title="Advanced CSV Explorer", layout="wide")
