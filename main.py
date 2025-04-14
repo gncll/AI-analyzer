@@ -17,11 +17,13 @@ st.set_page_config(page_title="Advanced CSV Explorer", layout="wide")
 st.title("LearnAIWithMe Data Explorer")
 
 # Upload CSV
-uploaded_file = st.file_uploader("📂 Upload your CSV file", type=["csv"])
+uploaded_file = st.file_uploader("📂 Upload your CSV or Excel file", type=["csv", "xlsx"])
 
 if uploaded_file:
-    # Read the CSV file
-    df = pd.read_csv(uploaded_file)
+    # Detect file type and read accordingly
+    if uploaded_file.name.endswith(".csv"):
+        df = pd.read_csv(uploaded_file)
+    elif uploaded_file.name.endswith(".xlsx"):
     
     # Create tabs for different functionalities
     tab1, tab2, tab3, tab4, tab5 = st.tabs(["📊 Data Overview", "🔍 Data Exploration", "📈 Visualizations", "🤖 AI Assistant", "🧠 Model Building"])
