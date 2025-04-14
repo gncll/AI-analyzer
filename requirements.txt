@@ -9,3 +9,4 @@ langchain-experimental
 openai
 tabulate
 scikit-learn
+openpyxl
