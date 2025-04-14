@@ -21,9 +21,11 @@ uploaded_file = st.file_uploader("📂 Upload your CSV or Excel file", type=["cs
 
 if uploaded_file:
     # Detect file type and read accordingly
+    # Detect file type and read accordingly
     if uploaded_file.name.endswith(".csv"):
         df = pd.read_csv(uploaded_file)
     elif uploaded_file.name.endswith(".xlsx"):
+        df = pd.read_excel(uploaded_file)
     
     # Create tabs for different functionalities
     tab1, tab2, tab3, tab4, tab5 = st.tabs(["📊 Data Overview", "🔍 Data Exploration", "📈 Visualizations", "🤖 AI Assistant", "🧠 Model Building"])
